@@ -1,0 +1,174 @@
+@use '../../../../scss/' as *;
+
+.message {
+    display: flex;
+    margin: 20px 15px;
+    align-items: center;
+}
+
+.icon-more {
+    display: none;
+    cursor: pointer;
+}
+
+.message:hover .icon-more {
+    display: block;
+}
+
+.messHandleGroup {
+    @include flex(unset, center);
+}
+
+.messright {
+    display: flex;
+    flex-direction: column;
+}
+
+.messName {
+    font-size: 0.9rem;
+}
+
+.messDel {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(245, 241, 241);
+    color: rgb(134, 130, 130);
+    border: 1px solid rgb(204, 201, 201);
+}
+
+.messImg {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.messText {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(245, 241, 241);
+    color: black;
+    word-wrap: break-word;
+    width: fit-content;
+    max-width: 500px;
+}
+
+.messRow {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 500px;
+}
+
+.messImgUrl {
+    text-align: center;
+    margin: 2px;
+
+    img {
+        border-radius: 15px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        vertical-align: middle;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.messBot {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.message.own {
+    justify-content: flex-end;
+}
+
+.message.own .messName {
+    display: none;
+}
+
+.message.own .messright {
+    align-items: flex-end;
+    height: auto;
+}
+
+.message.own .messText {
+    background-color: $main-color;
+    color: #fff;
+}
+
+.message.own .messImg {
+    display: none;
+}
+
+.message.group .messright {
+    height: auto;
+}
+
+.message.group .messImg {
+}
+
+// modal anh
+.header-detail-img {
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 14px;
+    padding-right: 4px;
+    height: 24px;
+    background-color: #545454;
+    color: #fff;
+    @include flex(center, right);
+}
+
+.btn-close {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.show-img {
+    height: calc(100vh - 26px);
+    background-color: #3e4041;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+//tippy
+.wrapper-more {
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 8px;
+    min-width: 35px;
+    min-height: 35px;
+    text-align: center;
+
+    li {
+        color: #000;
+        line-height: 35px;
+        padding: 4px 6px;
+        &:hover {
+            cursor: pointer;
+            background-color: #eeeff2;
+        }
+    }
+}

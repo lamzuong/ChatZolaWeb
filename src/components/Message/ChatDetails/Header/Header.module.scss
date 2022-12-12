@@ -1,0 +1,7 @@
+@use '../../../../scss/' as *;
+
+.wrapper {
+    @include flex(center, center);
+    height: 80px;
+    z-index: 1;
+}

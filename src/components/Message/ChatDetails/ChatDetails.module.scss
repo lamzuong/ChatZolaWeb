@@ -1,0 +1,235 @@
+@use '../../../scss' as *;
+
+.wrapper {
+    min-width: 300px;
+    background-color: #eeeff2;
+}
+
+.customHeader {
+    height: 80px;
+    padding: 0 15px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    @include flex(center, center);
+}
+
+.wrapper-info {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 80px);
+    overflow: auto;
+}
+
+.edit {
+    @include flex(center, center);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-left: 13px;
+    background-color: #e5e7eb;
+    cursor: pointer;
+}
+
+// modal
+
+//general
+
+.general {
+    margin-top: 8px;
+    background-color: #fff;
+}
+
+// store
+.store {
+    margin-top: 8px;
+    background-color: #fff;
+    padding: 0 16px;
+}
+
+.content {
+    display: grid;
+    padding: 0 16px;
+}
+
+.gridv2 {
+    gap: 8px;
+    grid-template-columns: calc(25% - 6px) calc(25% - 6px) calc(25% - 6px) calc(25% - 6px);
+}
+
+.wrapper-media {
+    width: 62px;
+    height: 62px;
+    border-radius: 4px;
+    contain: strict;
+    cursor: pointer;
+    position: relative;
+    background-color: #f4f5f7;
+    @include flex(center, center);
+}
+
+.wrapper-media:hover::before {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.wrapper-media::before {
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+// Modal img show
+
+.header-detail-img {
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 14px;
+    padding-right: 4px;
+    height: 24px;
+    background-color: #545454;
+    color: #fff;
+    @include flex(center, right);
+}
+
+.btn-close {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.show-img {
+    height: calc(100vh - 26px);
+    background-color: #3e4041;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.listMember {
+    width: 100%;
+    min-height: 50px;
+    overflow-y: auto;
+    // height: 300px;
+    overscroll-behavior: contain;
+    margin-top: 10px;
+}
+
+.item-mem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-add-frend {
+    height: 24px;
+    min-width: 24px;
+    padding: 0 8px;
+    background-color: #fff;
+    border: 1px solid #0068ff;
+    font-weight: bold;
+    color: #0068ff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+    &:hover {
+        background-color: #e5efff;
+    }
+}
+
+.wrapper-modal {
+    width: 360px;
+}
+
+.header-modal {
+    @include flex(center, left);
+    height: 48px;
+    padding: 0 8px 0 16px;
+    border-bottom: 1px solid #e5e7eb;
+
+    span {
+        font-weight: 500;
+        font-size: 16px;
+    }
+}
+
+.body-modal {
+    padding: 14px 16px 0;
+    @include flex(center, center);
+    flex-direction: column;
+}
+
+.footer-modal {
+    padding: 14px 16px;
+    @include flex(center, right);
+}
+.btn-cancel,
+.btn-conf {
+    border: none;
+    outline: none;
+    height: 40px;
+    min-width: 40px;
+    padding: 0 16px;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-conf {
+    background-color: $main-color;
+    color: #fff;
+}
+
+//modal delete mem group
+
+.wrapper-modal {
+    min-width: 300px;
+}
+
+.content-modal {
+    margin-top: 15px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
+.btns {
+    padding: 10px 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btnConf {
+    background-color: #0190f3;
+}
+
+.btnCal {
+    background-color: red;
+}
